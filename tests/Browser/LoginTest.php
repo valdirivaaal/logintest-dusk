@@ -27,10 +27,10 @@ class LoginTest extends DuskTestCase
                     ->click('#cmiddle > stream > div.timelines > div:nth-child(1) > div > div.tl-footer > div.pull-right > a')
                     ->waitForText('Send');
 
-            $name = $browser->value('#main > detail-ticket > div > div > div.r2 > div > div.col-sm-4.hidden-xs.h-100-persen.r.panel-right > div.dt-section.section-profile > div.profile-name');
+            $name = $browser->text('#main > detail-ticket > div > div > div.r2 > div > div.col-sm-4.hidden-xs.h-100-persen.r.panel-right > div.dt-section.section-profile > div.profile-name');
 
             $browser->element('.btn-fill')->getLocationOnScreenOnceScrolledIntoView();
-            $browser->type('textarea[name=content]', $name.' Halo :)')
+            $browser->type('textarea[name=content]', '@'. $name .' Halo :)')
                     ->pause(5000)
                     ->press('Send');
             $browser->waitUntilMissing('#main > detail-ticket > div > div');
