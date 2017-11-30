@@ -5,7 +5,7 @@ addons:
    chrome: stable
 
 install:
-   - sudo apt-get install php7.0 &
+   - sudo apt-get install php7.0
    - php -v
    - cp .env.dusk .env
    - travis_retry composer install --no-interaction --prefer-dist --no-suggest
