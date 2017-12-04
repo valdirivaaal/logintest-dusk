@@ -14,7 +14,7 @@ install:
    - travis_retry composer install --no-interaction --prefer-dist --no-suggest
 
 before_script:
-   - google-chrome-stable --remote-debugging-port=9515 http://beta-sm.45.in
+   - google-chrome-stable --remote-debugging-port=9515 http://beta-sm.45.in &
 
 script:
    - php artisan dusk tests/Browser/LoginTest.php
