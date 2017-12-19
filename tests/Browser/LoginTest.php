@@ -24,8 +24,8 @@ class LoginTest extends DuskTestCase
                     ->assertSee('TEAM');
 
             $browser->waitFor('.ticket-card')
-                    ->click('#cmiddle > stream > div.timelines > div:nth-child(5) > div > div.tl-footer > div.pull-right > a')
-                    ->waitForText('Send');
+                    ->click('#cmiddle > stream > div.timelines > div:nth-child(2) > div > div.tl-footer > div.pull-right > a')
+                    ->waitForText('Send', 20);
 
             $name = $browser->text('#main > detail-ticket > div > div > div.r2 > div > div.col-sm-4.hidden-xs.h-100-persen.r.panel-right > div.dt-section.section-profile > div.profile-name');
 
@@ -38,7 +38,7 @@ class LoginTest extends DuskTestCase
             $browser->pause(5000)
                     ->clickLink('Logout')
                     ->waitUntilMissing('h3.panel-title', 10)
-                    ->assertSee('Login');
+                    ->waitForText('Login');
         });
     }
 }
