@@ -24,7 +24,7 @@ class LoginTest extends DuskTestCase
                     ->assertSee('TEAM');
 
             $browser->waitFor('.ticket-card')
-                    ->click('#cmiddle > stream > div.timelines > div:nth-child(1) > div > div.tl-footer > div.pull-right > a')
+                    ->click('#cmiddle > stream > div.timelines > div:nth-child(2) > div > div.tl-footer > div.pull-right > a')
                     ->waitForText('Send');
 
             $name = $browser->text('#main > detail-ticket > div > div > div.r2 > div > div.col-sm-4.hidden-xs.h-100-persen.r.panel-right > div.dt-section.section-profile > div.profile-name');
